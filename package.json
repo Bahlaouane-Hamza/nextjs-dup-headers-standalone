@@ -4,13 +4,14 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
+    "info": "next info",
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
     "postinstall": "patch-package"
   },
   "dependencies": {
-    "next": "14.0.3",
+    "next": "^14.0.4-canary.18",
     "patch-package": "^8.0.0",
     "react": "^18",
     "react-dom": "^18"
