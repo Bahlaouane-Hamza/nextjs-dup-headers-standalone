@@ -1,0 +1,13 @@
+diff --git a/node_modules/next/dist/server/next-server.js b/node_modules/next/dist/server/next-server.js
+index faee964..d3d6608 100644
+--- a/node_modules/next/dist/server/next-server.js
++++ b/node_modules/next/dist/server/next-server.js
+@@ -1120,7 +1120,7 @@ class NextNodeServer extends _baseserver.default {
+     }
+     attachRequestMeta(req, parsedUrl, isUpgradeReq) {
+         // Injected in base-server.ts
+-        const protocol = req.headers["x-forwarded-proto"];
++        const protocol = req.headers['x-forwarded-proto']?.includes("https") ? 'https' : 'http'
+         // When there are hostname and port we build an absolute URL
+         const initUrl = this.fetchHostname && this.port ? `${protocol}://${this.fetchHostname}:${this.port}${req.url}` : this.nextConfig.experimental.trustHostHeader ? `https://${req.headers.host || "localhost"}${req.url}` : req.url;
+         (0, _requestmeta.addRequestMeta)(req, "initURL", initUrl);
